@@ -5,7 +5,6 @@ const file = gnort[1];
 const fs = require('fs')
 //const text = "./index.html"
 const net = require('net');
-const bytes = 0
 const words = ""
 const request = require('request');
 
@@ -18,7 +17,8 @@ request(url, (error, response, body) => {
       return
     }
     
-    console.log(`Downloaded & saved ${bytes} to ${file}`);//text 
+    const bytes = body.length
+    console.log(`Downloaded & saved ${bytes}bytes to ${file}`);//text 
   })
   
 });
